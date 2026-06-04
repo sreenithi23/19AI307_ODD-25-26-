@@ -2,7 +2,7 @@
 
 ## QUESTION:
 
-A shop keeper would like to welcome their customers with their name.
+A shop keeper would like to welcome their customers with their name..
 
 Write a java program to get name from the user (String) and print it.
 
