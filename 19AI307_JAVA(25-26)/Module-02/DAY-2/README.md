@@ -1,43 +1,23 @@
-# Ex.No:1(B) CONDITIONAL STATEMENT
+# Ex.No:2(B) METHODS
 
 ## QUESTION:
-A train company charges tickets based on age and travel class:
 
-Children (<12): ₹5 per km (any class)
-
-Adults (12–60):
-
-Sleeper: ₹10/km
-
-AC: ₹15/km
-
-Seniors (>60): ₹7/km (any class)
-
-Task: Accept age, distance and travel class (1 for Sleeper, 2 for AC)(follow the same order to get the inputs). Calculate fare.
-
-For example:
-
-Input	
-5
-100
-Result
-500
-
+Write a method int cube(int x) that calls a method int square(int x) internally to calculate the cube as x * square(x).
 
 
 ## AIM:
 
-To write a program that accepts the age, distance, and travel class (1 for Sleeper, 2 for AC) and calculates the train fare based on age-wise and class-wise fare rules.
+To Write a method int cube(int x) that calls a method int square(int x) internally to calculate the cube as x * square(x).
+
 
 ## ALGORITHM :
 ```
-1.Start and read the inputs: age, distance, and travel class.
-2.Determine the rate per km based on age and class conditions.
-3.If age < 12, set rate = 5;
-   else if age 12–60, set rate = 10 for Sleeper or 15 for AC;
-   else if age > 60, set rate = 7.
-4.Calculate the fare using: fare = distance × rate.
-5.Display the total fare and Stop.
+1.Start the program.
+2.Import the necessary package 'java.util'
+3.Create an object of the MathUtil class.
+4.Call the cube() method using the object, passing the input value.
+5.The cube() method internally calls square() to compute:cube = x × (x × x).
+6.Print the cube value and stop.
 ```
 
 
@@ -46,7 +26,7 @@ To write a program that accepts the age, distance, and travel class (1 for Sleep
 ## PROGRAM:
  ```
 /*
-Program to implement a conditional statement using Java
+Program to implement a Methods using Java
 Developed by: Magesh.N
 RegisterNumber:  212222040091
 */
@@ -55,44 +35,44 @@ RegisterNumber:  212222040091
 ```
 import java.util.Scanner;
 
-public class TrainFare {
+class MathUtil {
+
+    int square(int x) {
+        return x * x;
+    }
+
+    int cube(int x) {
+        return x * square(x);
+    }
+}
+
+class prog {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        
+        int num = scanner.nextInt();  
 
-        int age = sc.nextInt();
-        int distance = sc.nextInt();
+        MathUtil util = new MathUtil();
+        int result = util.cube(num);  
 
-        int farePerKm=0;;
+        System.out.println(result);   
 
-        if (age < 12) {
-            farePerKm = 5;
-        } else if (age > 60) {
-            farePerKm = 7;
-        } else { 
-            int travelClass = sc.nextInt();
-            if (travelClass == 1) {
-                farePerKm = 10;
-            } else if (travelClass == 2) {
-                farePerKm = 15;
-            } else {
-                System.out.println("Invalid class");
-                return;
-            }
-        }
-
-        int totalFare = farePerKm * distance;
-        System.out.println(totalFare);
+        scanner.close();
     }
 }
 ```
 
 
+
+
+
+
 ## OUTPUT:
 
-<img width="652" height="356" alt="image" src="https://github.com/user-attachments/assets/492431f7-c261-4417-aecd-114541a862fd" />
+<img width="392" height="242" alt="image" src="https://github.com/user-attachments/assets/e5a3ea04-0840-4c35-ae01-f0290c43eea3" />
 
 
 ## RESULT:
 
-Thus, a java program to calculates the train fare based on age-wise and class-wise fare rules is executed successfully.
+Thus, the program to  a method int cube(int x) that calls a method int square(int x) internally to calculate the cube as x * square(x) executed successfully.
 
